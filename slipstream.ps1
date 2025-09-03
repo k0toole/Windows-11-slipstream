@@ -6,7 +6,7 @@ echo "loop index is $idx"
 }
 
 <# Validate ISO, update with ISO file name #>
-Get-FileHash "Downloads\Win11_23H2_EnglishInternational_x64.iso"
+Get-FileHash "Downloads\Win11_24H2_EnglishInternational_x64.iso"
 
 <# Change Directory to User Profile #>
 chdir "~"
@@ -16,7 +16,7 @@ dir
 Download Dell Command | Deploy WinPE Driver Pack
 The WinPE contains Storage and Network Controllers
 Update the name of your .CAB file and run #>
-expand "Downloads\WinPE11.0-Drivers-A00-5DWN3.CAB" -f:* "Downloads\BootDriversExpanded"
+expand "Downloads\WinPE11.0-Drivers-A07-YJ49J.CAB" -f:* "Downloads\BootDriversExpanded"
 <# Copy the contents of the x64 to Downloads\BootDrivers#>
 
 <#boot.wim
@@ -43,7 +43,7 @@ Download Dell Command | Deploy Driver Pack
 This pack contains All Drivers
 Most are Dell Update Packages and run to extract. Older ones may eb CAB files.
 Update the name of your .CAB file and run #>
-expand "Downloads\WinPE10.0-Drivers-A25-F0XPX.CAB" -f:* "Downloads\InstallDriversExpanded"
+expand "Downloads\WinPE11.0-Drivers-A07-YJ49J.CAB" -f:* "Downloads\InstallDriversExpanded"
 <# Copy the contents of the x64 to Downloads\InstallDrivers#>
 
 <#install.wim
@@ -118,3 +118,4 @@ Open newiso.ps1, follow the instructions and run the script #>
 <# Run either, the first uses a more sensible title, the second uses the original #>
 New-ISOFile -source "Downloads\InstallationMedia" -destinationIso "Downloads\Win11_23H2_EnglishInternational_x64_Drivers.iso" -bootFile "Downloads\InstallationMedia\efi\microsoft\boot\efisys.bin" -title "Win11_23H2_EnglishUK"
 New-ISOFile -source "Downloads\InstallationMedia" -destinationIso "Downloads\Win11_23H2_EnglishInternational_x64_Drivers.iso" -bootFile "Downloads\InstallationMedia\efi\microsoft\boot\efisys.bin" -title "CCCOMA_X64FRE_EN-GB_DV9"
+
